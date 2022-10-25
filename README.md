@@ -33,3 +33,7 @@ The below figures are examples of the Laplacian of Potential, the Potential, the
 
 <img width="500" alt="curl2" src="https://user-images.githubusercontent.com/55065632/197667953-73bd1594-9218-43d0-9caa-88ea331e21e3.png">
 
+## References
+<a id="1">[1]</a> 
+Kunyansky, Leonid. "A Mathematical Model and Inversion Procedure for Magneto-acousto-electric Tomography." 
+Inverse Problems 28.3 (2012): 35002-21. Web.
