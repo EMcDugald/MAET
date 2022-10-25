@@ -14,9 +14,15 @@ The primary purpose of this project is to simulate lead currents for the testing
 Suppose we inject currents at a finite set of points $W_j$, with $\sum_{j=1}^{n}W_j=0$ over a region of constant conductivity $\sigma_0$.
 The resulting electric potential is given by $w(x) = -\frac{1}{\sigma_0}\sum_{j=1}^{n}W_j\phi(x-y^{(j)})$, where $\phi(x)=\frac{1}{2\pi}\ln|x|$ is the fundamental solution to Laplace's Equation.
 Consider now a simply connected region $\Omega$ not containing any of the injection points where conductivity is non-constatnt. The equation governing the resulting electric potential over $\Omega$ is given by
-$\begin{cases}\nabla \cdot \sigma(x) (u(x)+w(x)) = 0, & x\in \mathbb{R}^2\setminus \cup_{j=1}^{n}y^{(j)} \\ \lim_{|x|\rightarrow \infty}u(x)=0\end{cases}$. This is the conductivity equation.
+$\nabla \cdot \sigma(x) (u(x)+w(x)) = 0, \quad x\in \mathbb{R}^2\setminus \cup_{j=1}^{n}y^{(j)}, \quad \lim_{|x|\rightarrow \infty}u(x)=0$. This is the conductivity equation.
 
 Let $U(x) = \Delta u(x)$. We can express the conductivity equation as a Fredholm equation of the second kind: $U(x)+ \left[ \frac{\partial \ln \sigma(x)}{\partial x_1}\int_{\Omega}\phi(x-y)\frac{\partial}{\partial y_1}U(y)dy + \frac{\partial \ln \sigma(x)}{\partial x_2}\int_{\Omega}\phi(x-y)\frac{\partial}{\partial y_2}U(y)dy   \right] = -\nabla \ln \sigma(x) \cdot \nabla w(x)$.
+
+Given an initial configuration of point sources and an initial conductivity function, we compute $U(x)$ via GMRES, and invert the laplacian with a Sine Series to obtain the electric potential, $u(x)$. From $u(x)$, we can use standard methods to compute electrical currents and their curls. Note that special care must be taken to handle the singular kernels in the above convolutions. A method is outlined in the results folder which explains how to compute those convolutions.
+ 
+The main script to be run is "currents.py" which is located in src/scripts/. The supporting functions are defined in the modules in the "main" folder. This script will output .d files for the curl, currents, error, conductivity, and electric potential, as well as drawings of the current lines. 
+The method simulates an experiment where the tissue is rotated in a chamber, and executes as many rotations as specified in the "currents.cfg" file. "currents.cfg" also contains parameters to determine the configuration of point sources, and the form of the conductivity function. 
+
 
 
 
