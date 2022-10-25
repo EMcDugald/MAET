@@ -7,12 +7,12 @@ $M(t) = u(t,z_1)-u(t,z_2)$, where $u(t,x)$ denotes the electric potential of the
 
 Let $J$ denote the "lead" current that would flow through the tissue if a unit current were injected at the point $z_1$ and extracted at the point $z_2$. It can be shown that
 $M(t) = \frac{B}{\rho}\cdot \left( R(\nabla \times J(x)) \right)$, where $R$ denotes the Radon transform, $B$ is the magnetic field, and $\rho$ is the density of the tissue, assumed to be constant. Thus, the measurements
- of differences on electric potentail are proportional to the curl of lead current.
+ of differences on electric potential are proportional to the curl of lead current.
  
 The primary purpose of this project is to simulate lead currents for the testing of MAET inversion procedures. 
 
-Suppose we inject currents at a finite set of points $W_j$, with $\sum_{j=1}^{n} W_j= 0$ over a region of constant conductivity $\sigma_0$.
-The resulting electric potential is given by $w(x) = -\frac{1}{\sigma_0}\sum_{j=1}^{n}W_j\phi(x-y^{(j)})$, where $\phi(x)=\frac{1}{2\pi}\ln|x|$ is the fundamental solution to Laplace's Equation.
+Suppose we inject currents at a finite set of points $W_j$, with $\sum W_j= 0$ over a region of constant conductivity $\sigma_0$.
+The resulting electric potential is given by $w(x) = -\frac{1}{\sigma_0}\sum W_j\phi(x-y^{(j)})$, where $\phi(x)=\frac{1}{2\pi}\ln|x|$ is the fundamental solution to Laplace's Equation.
 Consider now a simply connected region $\Omega$ not containing any of the injection points where conductivity is non-constatnt. The equation governing the resulting electric potential over $\Omega$ is given by
 $\nabla \cdot \sigma(x) (u(x)+w(x)) = 0, \quad x\in \mathbb{R}^2\setminus \cup_{j=1}^{n}y^{(j)}, \quad \lim_{|x|\rightarrow \infty}u(x)=0$. This is the conductivity equation.
 
