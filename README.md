@@ -1,6 +1,6 @@
 This project contains methods to solve the forward problem of Magneto Acousto Electric Tomography (MAET).
 
-MAET is a medical imaging modality, which recovers the conductivity of tissue as a contrast agent. 
+MAET is a medical imaging modality, which recovers the conductivity of tissue. 
 A MAET image is obtained by placing the tissue of interest in a conductive medium, and coupling planar acoustic waves with a constant magnetic field to generate electrical signals.
 Let $M(t)$ denote our measurement at time $t$. If we are using a pair of electrodes at points $z_1, z_2$ on the boundary of the apparatus, our measurements are given by 
 $M(t) = u(t,z_1)-u(t,z_2)$, where $u(t,x)$ denotes the electric potential of the tissue.
@@ -11,7 +11,7 @@ $M(t) = \frac{B}{\rho}\cdot \left( R(\nabla \times J(x)) \right)$, where $R$ den
  
 The primary purpose of this project is to simulate lead currents for the testing of MAET inversion procedures. 
 
-Suppose we inject currents at a finite set of points $W_j$, with $\sum_{j=1}^{n}W_j=0$ over a region of constant conductivity $\sigma_0$.
+Suppose we inject currents at a finite set of points $W_j$, with $\sum_{j=1}^{n} W_j= 0$ over a region of constant conductivity $\sigma_0$.
 The resulting electric potential is given by $w(x) = -\frac{1}{\sigma_0}\sum_{j=1}^{n}W_j\phi(x-y^{(j)})$, where $\phi(x)=\frac{1}{2\pi}\ln|x|$ is the fundamental solution to Laplace's Equation.
 Consider now a simply connected region $\Omega$ not containing any of the injection points where conductivity is non-constatnt. The equation governing the resulting electric potential over $\Omega$ is given by
 $\nabla \cdot \sigma(x) (u(x)+w(x)) = 0, \quad x\in \mathbb{R}^2\setminus \cup_{j=1}^{n}y^{(j)}, \quad \lim_{|x|\rightarrow \infty}u(x)=0$. This is the conductivity equation.
@@ -22,10 +22,3 @@ Given an initial configuration of point sources and an initial conductivity func
  
 The main script to be run is "currents.py" which is located in src/scripts/. The supporting functions are defined in the modules in the "main" folder. This script will output .d files for the curl, currents, error, conductivity, and electric potential, as well as drawings of the current lines. 
 The method simulates an experiment where the tissue is rotated in a chamber, and executes as many rotations as specified in the "currents.cfg" file. "currents.cfg" also contains parameters to determine the configuration of point sources, and the form of the conductivity function. 
-
-
-
-
-
-
-
