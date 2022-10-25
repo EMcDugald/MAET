@@ -23,15 +23,13 @@ Given an initial configuration of point sources and an initial conductivity func
 The main script to be run is "currents.py" which is located in src/scripts/. The supporting functions are defined in the modules in the "main" folder. This script will output .d files for the curl, currents, error, conductivity, and electric potential, as well as drawings of the current lines. 
 The method simulates an experiment where the tissue is rotated in a chamber, and executes as many rotations as specified in the "currents.cfg" file. "currents.cfg" also contains parameters to determine the configuration of point sources, and the form of the conductivity function. 
 
-Laplacian of Potential:
+The below figures are examples of the Laplacian of Potential, the Potential, the Current Lines, and the Curl of Current.
+
 <img width="500" alt="lap_pot2" src="https://user-images.githubusercontent.com/55065632/197667737-f685ee28-7b9e-47e9-b2d0-5d9008505420.png">
 
-Potential:
 <img width="500" alt="smooth_pot2" src="https://user-images.githubusercontent.com/55065632/197667788-e528239f-ad70-4e69-ba77-c2b9e749d2aa.png">
 
-Current Lines:
 ![current_lines2](https://user-images.githubusercontent.com/55065632/197667898-bd420c7b-9ecf-4fcb-82ca-d5f07393a828.png)
 
-Curl of Current:
 <img width="500" alt="curl2" src="https://user-images.githubusercontent.com/55065632/197667953-73bd1594-9218-43d0-9caa-88ea331e21e3.png">
 
